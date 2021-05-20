@@ -1,0 +1,757 @@
+/*
+ --------------------------------------------------------------------------------------------------
+ * Common stylesheet design Version 1.0
+ --------------------------------------------------------------------------------------------------
+ -- Author		: Arius Vietnam JSC
+ -- Date		: 2021/01/25
+ -- Description	: Common style design for all web pages.
+ -- Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ -- History		:
+ -- -- --- ------------ --------------- -----------------------------------------------------------
+ -- -- No	Date 		Author      	Description
+ -- -- --- ------------ --------------- -----------------------------------------------------------
+ -- --   1 2021/01/25   PhongND			New stylesheet
+ --------------------------------------------------------------------------------------------------
+ */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dddddd #ffffff;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 20px;
+  border: 3px solid #ffffff;
+}
+
+body {
+	line-height: 1;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+button {
+
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table !important;
+}
+
+.clearfix:after {
+    clear: both !important;
+}
+
+/* IE6/7 Support */
+.clearfix {
+    *zoom: 1 !important;
+}
+
+/* BACKGROUND COLOR MODE */
+.transparent {background-color: transparent !important;}
+
+.white { background-color: #FFFFFF !important; border-color: #595959 !important; color: #333434 !important;}
+.white:hover { background-color: #D2D2D2 !important; }
+.white:active { background-color: #ECECEC !important; }
+
+.red { background-color: #E62727 !important; }
+.red:hover { background-color: #CF2525 !important; }
+.red:active { background-color: #E62727 !important; }
+
+.blue { background-color: #009DD5 !important; }
+.blue:hover { background-color: #00A7E4 !important; }
+.blue:active { background-color: #009DD5 !important; }
+
+.green { background-color: #00B386 !important; border-color: #00B386 !important;}
+.green:hover { background-color: #00CC96 !important; border-color: #00CC96 !important;}
+.green:active { background-color: #00B386 !important; }
+
+.orange { background-color: #F39C12 !important; border-color: #FFCF25 !important;}
+.orange:hover { background-color: #FF5C00 !important; }
+.orange:active { background-color: #E33100 !important; }
+
+.coban { background-color: #00A0B1 !important; }
+.coban:hover { background-color: #009DD5 !important; }
+.coban:active { background-color: #009DD5 !important; }
+
+.yellow { background-color: #FBDE09 !important; }
+.yellow:hover { background-color: #DAAE45 !important; }
+.yellow:active { background-color: #DAAE45 !important; }
+
+.light-blue { background-color: #AAD4FF !important; }
+.light-blue:hover { background-color: #55D4FF !important; }
+.light-blue:active { background-color: #55D4FF !important; }
+
+.gray { background-color: #8F857D !important; border-color: #8F857D !important;}
+.gray:hover { background-color: #808a8e !important; border-color: #808a8e !important;}
+.gray:active { background-color: #808a8e !important; }
+
+.flax { background-color: #E0D688 !important; }
+.flax:hover { background-color: #dfd6a7 !important; }
+.flax:active { background-color: #dfd6a7 !important; }
+
+.pearl-aqua { background-color: #8eccc0 !important; }
+.pearl-aqua:hover { background-color: #6bb2a5 !important; }
+.pearl-aqua:active { background-color: #6bb2a5 !important; }
+
+.bright-cerulean { background-color: #23b4e1 !important; }
+.bright-cerulean:hover { background-color: #15A0D6 !important; }
+.bright-cerulean:active { background-color: #15A0D6 !important; }
+
+.spainish-gray { background-color: #94a89a !important; }
+.spainish-gray:hover { background-color: #9cb380 !important; }
+.spainish-gray:active { background-color: #9cb380 !important; }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* TABLE STYLE */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    background-repeat: no-repeat;
+}
+
+.tbl {
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.tbl tr th {
+    background-color: #17AEDF;
+    border: 1px solid #ECECEC;
+    margin: 0;
+    padding: 3px 5px;
+    color: #FFFFFF;
+}
+
+.tbl tr td {
+    border: 1px solid #D5D6D1;
+    margin: 0;
+    padding: 3px 5px 3px 10px;
+    cursor: pointer;
+}
+
+.tbl tbody tr:nth-child(odd) td {
+    /* background-color: #FAFAFA; */
+}
+
+.tbl tbody tr:hover td {
+    /* background-color: #E9E9E9; */
+}
+
+.tbl.no-border tr th, .tbl.no-border tr td {
+	border: none;
+}
+
+.border-none {
+	border: none !important;
+}
+
+button:disabled {
+	cursor: not-allowed;
+}
+
+span.disabled {
+	cursor: not-allowed;
+}
+
+checkbox:disabled {
+	cursor: not-allowed;
+}
+
+.btn-fill {
+	width: 100%;
+}
+
+.font-size-12 {
+	font-size: 12px;
+}
+
+.font-size-13 {
+	font-size: 13px;
+}
+
+.font-size-14 {
+	font-size: 14px;
+}
+
+/**************************************************************************************************
+ * PAGE DESIGN-RELATED STYLESHEET
+ *************************************************************************************************/
+#page-content {
+	background-color: #ECECEC;
+
+	/* min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  	/* min-height: 100vh; /* These two lines are counted as one :-)       */
+ 	
+	display: flex;
+  	align-items: center;
+}
+
+ul.flashes {
+	padding: 0;
+}
+
+ul.flashes li {
+	list-style: none;
+	margin: 0;
+	padding: 5px 10px;
+}
+
+ul.flashes li.message.success {
+  color: #0090D6;
+}
+
+ul.flashes li.message.error {
+  color: #FF0000;
+}
+
+#login {
+  	vertical-align: middle;
+	background-color: #FFFFFF;
+
+	width: 300px;
+	height: auto;
+
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#login h3 {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	margin-bottom: 0;
+	font-size: 1.05rem;
+	font-weight: bold;
+	color: #333434;
+}
+
+#login img {
+	height: 30px;
+	vertical-align: middle;
+}
+
+.form-control {
+	height: calc(1.2em + 0.75rem + 2px);
+	padding: 0.3rem 0.75rem;
+	color: #495057;
+	font-size: 0.8rem;
+}
+
+#btn-login {
+	display: block;
+	margin: 0 auto;
+	padding: 0.3rem 0.75rem;
+	font-size: 0.8rem;
+}
+
+.btn {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0.3rem 0.75rem;
+	font-size: 0.8rem;
+
+	vertical-align: middle;
+}
+
+/* TOGGLE STYLING */
+.toggle-title {
+	display: inline-block;
+	margin-right: 10px;
+
+	vertical-align: middle;
+}
+.toggle {
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 0;
+	display: inline-block;
+
+  vertical-align: middle;
+}
+.toggle input {
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -9999px;
+}
+.toggle input + label {
+	margin: 0;
+	padding: 0.3rem 0.75rem;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	border: solid 1px #F7BD61;
+	background-color: #F1F3F7;
+	font-size: 0.8rem;
+	line-height: 140%;
+	font-weight: 600;
+	text-align: center;
+	box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+	transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.toggle input + label:first-of-type {
+	border-radius: 6px 0 0 6px;
+	border-right: none;
+}
+.toggle input + label:last-of-type {
+	border-radius: 0 6px 6px 0;
+	border-left: none;
+}
+.toggle input:hover + label {
+	border-color: #F7BD61;
+	cursor: pointer;
+}
+.toggle input:checked + label {
+	background-color: #FFCF25;
+	color: #333434;
+	box-shadow: 0 0 10px rgba(102, 179, 251, 0.5);
+	border-color: #FFCF25;
+	/*z-index: 1;*/
+}
+.toggle input:focus + label {
+	outline: dotted 1px #ccc;
+	outline-offset: 0.45rem;
+}
+@media (max-width: 800px) {
+	.toggle input + label {
+		padding: 0.75rem 0.25rem;
+		flex: 0 0 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+.selectdiv {
+	display: inline-block;
+	position: relative;
+	/*Don't really need this just for demo styling*/
+
+	min-width: 50px;
+	width: 60px;
+	vertical-align: middle;
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+	display: none;
+}
+
+.selectdiv:after {
+	content: '<>';
+	font: 14px "Consolas", monospace;
+	color: #333;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	right: 3px;
+	/*Adjust for position however you want*/
+
+	top: 8px;
+	padding: 0 0 2px;
+	border-bottom: 1px solid #999;
+	/*left line */
+
+	position: absolute;
+	pointer-events: none;
+}
+
+.selectdiv label {
+	margin-bottom: 0;
+}
+
+.selectdiv select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/* Add some styling */
+
+	display: block;
+	width: 60px;
+	max-width: 320px;
+	height: 25px;
+	float: right;
+	margin: 5px 0px;
+	padding: 0px 5px;
+	font-size: 13px;
+	line-height: 1.75;
+	color: #333;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #cccccc;
+	-ms-word-break: normal;
+	word-break: normal;
+}
+
+#page-header {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+#page-header .profile {
+	position: relative;
+	display: inline-block;
+	background-color: #FFFFFF;
+
+	margin: 0;
+	padding: 10px;
+}
+
+#page-header .profile img {
+	height: 24px;
+	vertical-align: middle;
+}
+
+#page-header .profile span {
+	display: inline-block;
+	margin-left: 5px;
+
+	vertical-align: middle;
+}
+
+#page-header .profile .icon {
+	height: 16px;
+	vertical-align: middle;
+}
+
+#info-area {
+	position: relative;
+	display: inline-block;
+	background-color: #ECECF6;
+
+	width: 430px;
+	height: calc(100vh - 45px);
+}
+
+#site-menu {
+	position: relative;
+	display: block;
+	margin: 10px;
+	padding: 0;
+
+	list-style: none;
+}
+
+#site-menu li {
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	float: left;
+
+	width: calc((100% - 20px)/3);
+	margin-right: 10px;
+	padding: 8px 10px;
+
+	text-align: center;
+}
+
+#site-menu li:first-child {
+	/* margin-left: 10px; */
+}
+
+#site-menu li:last-child {
+	margin-right: 0;
+}
+
+#site-menu li:hover {
+	background-color: #333434;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+#site-menu li.active {
+	background-color: #333434;
+	color: #FFFFFF;
+}
+
+#alert-area {
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	border-radius: 3px;
+	margin: 10px 10px 0;
+	padding: 0 10px 10px;
+	font-size: 14px;
+}
+
+.tbl-header {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.tbl-header tr th {
+}
+
+.tbl-header tr td {
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.area-header {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.numberWarning {
+    margin: 5px auto 8px;
+    background: #ED0000 !important;
+    color: #FFFFFF !important;
+}
+.numberCircle {
+	display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 5px auto 8px;
+    background: #FFFFFF;
+    border: 2px solid #ED0000;
+    color: #FFA87D;
+    text-align: center;
+    font-size: 16px;
+	vertical-align: middle;
+}
+
+.camera-select {
+	min-width: 100px;
+	margin-left: 10px;
+}
+
+#statistics-area {
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+#dashboard-area {
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+#passage-count-result {
+	display: inline-block;
+	border: 1px solid #333434;
+	width: 130px;
+	margin: 10px 0 0;
+	padding: 10px 10px 0;
+	font-size: 13px;
+	text-align: center;
+}
+
+#passage-count-result span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#in-trending, #out-trending {
+	display: inline-block;
+	border: 1px solid #333434;
+	width: calc((100% - 5px)/2);
+	margin: 10px 0 5px;
+	padding: 10px;
+}
+
+#in-trending span, #out-trending span {
+	display: inline-block;
+	margin-right: 5px;
+	font-size: 12px;
+	vertical-align: top;
+}
+
+#in-trending img, #out-trending img {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#chart-trending {
+	display: inline-block;
+	border: 1px solid #333434;
+	width: 100%;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#camera-area {
+	position: relative;
+	display: inline-block;
+	background-color: #ECECEC;
+
+	width: calc(100vw - 400px);
+	height: calc(100vh - 45px);
+
+	padding: 10px;
+}
+
+.camera-item.minimize {
+	position: relative;
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	width: calc(50%);
+	height: calc(50% - 25px);
+	margin: 0;
+	padding: 0;
+
+	float:left;
+	clear:none;
+}
+
+.camera-item.maximize {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+
+	background-color: #FFFFFF;
+	border: 1px solid #333434;
+	width: calc(100% - 20px);
+	height: calc(100% - 70px);
+	margin: 0;
+	padding: 0;
+
+	float:left;
+	clear:none;
+	z-index: 100;
+}
+
+.camera-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: block;
+	border: 1px solid #333434;
+	border-top: none;
+	border-left: none;
+	width: 150px;
+	margin: 0;
+	padding: 8px 10px;
+	text-align: center;
+}
+
+.circle-on {
+	display: inline-block;
+    background-color:#92D050;
+    border:1px solid #333434;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:12px;
+    height:12px;
+	margin-left: 160px;
+
+	vertical-align: middle;
+}
+
+.circle-off {
+	display: inline-block;
+    background-color:#FF0000;
+    border:1px solid #333434;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:12px;
+    height:12px;
+	margin-left: 160px;
+
+	vertical-align: middle;
+}
+
+.camera-on {
+	display: inline-block;
+	padding: 8px 10px;
+	vertical-align: middle;
+}
+
+.camera-stream {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 32px);
+}
+
+.alert-type {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+}
+
+.camera-expand {
+	display: block;
+	float: right;
+	vertical-align: middle;
+	margin: 0;
+	padding: 8px 10px;
+
+	cursor: pointer;
+}
+
+.icon {
+	height: 16px;
+}
+
+#camera-paging-area {
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#camera-paging-area span {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+
+#camera-paging-area a {
+	display: inline-block;
+	color: #333434;
+	vertical-align: middle;
+}
+
+#camera-display-no {
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+

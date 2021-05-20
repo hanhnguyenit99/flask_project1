@@ -1,0 +1,29 @@
+1.Install Python
+
+2. python -m venv venv
+	$ venv\Scripts\activate
+
+	$ pip install flask 
+      ......
+	
+	$ SET FLASK_DEBUG=1
+	$ flask run
+
+3.__init__.py
+from flask import Flask
+app = Flask(__name__)
+from app import routes
+
+4.routes.py
+from app import app 
+@app.route('/')
+@app.route('/index')
+def index():
+     return "Hello, World!"
+
+5.myblog.py
+from app import app
+
+6. SET FLASK_APP=app
+
+7.static, templates

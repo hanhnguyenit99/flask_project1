@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Hồ sơ
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-inverse">
+
+                <form class="form-inline" action="/action_page.php">
+
+                        <input class="form-control mr-sm-2" id="myInput" type="text" placeholder="Quận" style="width: 400px">
+                        &ensp;
+                        <button class="btn btn-success" type="submit">Tìm kiếm</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <div style="width: 500px; padding-left: 10px">
+                        <a href="{{ url_for('demo') }}">
+                             <button style="background-color:white; border: white; font-size: 15px; color: #171a1d; padding-left: 30px">
+                                 <i class="fas fa-home"></i>
+                             </button> Trang chủ
+                         </a>
+                        <a href="#">
+                            <button style="font-size: 15px; color: #171a1d; background-color: white; border: white; padding-left: 30px">
+                                <i class="fas fa-user"></i>
+                            </button> Hồ Sơ
+                        </a>
+                        <a href="{{ url_for('data') }}">
+                            <button style="font-size: 15px; color: #171a1d; background-color: white; border: 0px white; padding-left: 30px">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button> Đăng Tin
+                        </a>
+                        <a href="{{ url_for('logout') }}">
+                            <button style="font-size: 15px; color: #171a1d; background-color: white; border: 0px white; padding-left: 30px">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </button> Đăng Xuất
+                        </a>
+                    </div>
+                </form>
+            </nav>
+        </div>
+
+        <div id="demo" class="carousel slide row" data-ride="carousel">
+                 <ul class="carousel-indicators">
+                             <li data-target="#demo" data-slide-to="0" class="active"></li>
+                             <li data-target="#demo" data-slide-to="1"></li>
+                             <li data-target="#demo" data-slide-to="2"></li>
+                 </ul>
+                 <div class="carousel-inner" style="width: 1140px">
+                             <div class="carousel-item active">
+                                   <img src="{{ url_for('static',filename='/assets/images/anh1.png') }}" alt="Ảnh phòng trọ" width="1140" height="500">
+                                   <div class="carousel-caption" style="color: #00A7E4">
+                                       <b>
+                                          <h3>Phòng trọ khép kín</h3>
+                                          <p>Cầu Giấy!</p>
+                                       </b>
+                                   </div>
+                             </div>
+                             <div class="carousel-item">
+                                   <img src="{{ url_for('static',filename='/assets/images/anh2.png') }}" alt="Ảnh phòng trọ" width="1140" height="500">
+                                   <div class="carousel-caption" style="color: #00A7E4">
+                                       <b>
+                                           <h3>Chung cư mini</h3>
+                                           <p>Hà Đông!</p>
+                                       </b>
+                                   </div>
+                             </div>
+                             <div class="carousel-item">
+                                   <img src="{{ url_for('static',filename='/assets/images/anh3.jpg') }}" alt="Ảnh phòng trọ" width="1140" height="500">
+                                   <div class="carousel-caption" style="color: #00A7E4">
+                                       <b>
+                                           <h3>Thiết kế đẹp mắt</h3>
+                                           <p>Welcome!</p>
+                                       </b>
+                                   </div>
+                             </div>
+                 </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                             <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                             <span class="carousel-control-next-icon"></span>
+                </a>
+        </div><br><br>
+
+
+            <div class="container">
+                <h2> Hồ sơ</h2>
+                     {% with messages = get_flashed_messages(with_categories=true) %}
+                     {% if messages %}
+                               <ul class=flashes>
+                                  {% for category, message in messages %}
+                                      <li class="message {{ category }}" style="padding: 0; font-size: 11.5px;">{{ message }}</li>
+                                  {% endfor %}
+                               </ul>
+                                  {% endif %}
+                                  {% endwith %}
+                <p>Nếu không phải tài khoản của bạn, hãy thoát ra và <a href="{{ url_for('logout') }}">Đăng nhập</a> lại!</p><br>
+                <p>UserID: {{ current_user.id }}</p>
+                <p>Username: {{ current_user.username }}</p>
+                <p>Email: {{ current_user.email }}</p>
+
+
+
+            </div>
+<div class="jumbotron text-center" style="margin-bottom:0; background-color: white">
+        <center>
+            <div class="table-responsive">
+                    <table class=" table">
+                          <thead>
+                                <tr>
+                                    <th>Liên Hệ</th>
+                                    <th>Liên Kết</th>
+                                </tr>
+                          </thead>
+                              <tbody>
+                                    <tr>
+                                        <td>Tìm phòng trọ 24h</td>
+                                        <td><a href="#">Phone:032980215</a></td>
+                                    </tr>
+
+                                    <tr>
+                                         <td><a href="https://www.facebook.com/hanhsuti.me/">Facebook:Hạnh Nguyễn</a></td>
+                                         <td><a href="#">Gmail:nguyenhanh02051999@gmail.com</a></td>
+
+                                    </tr>
+                              </tbody>
+                    </table>
+           </div>
+        </center>
+</div>
+    </div>
+
+{#<script>#}
+{#        $(document).ready(function(){#}
+{#            $.getJSON({url: "http://127.0.0.1:5000/api_base/users/get/{{ username }}", success: function(result){#}
+{#                console.log(result)#}
+{#                    $('#username').val(result.User.username)#}
+{#                    $('#id').val(result.User.id)#}
+{#                    $('#email').val(result.User.email)#}
+{#                }});#}
+{#            });#}
+{#    </script>#}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
